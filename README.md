@@ -24,4 +24,4 @@
 
 ### Screenshot
 
-![Capture](https://github.com/iammalikmusaib/iNsurance_predict/blob/76a7203fa5ed4928d258bea87e5c7e81b1eb77ce/static/CSS/INSURANCE%20PHOTO.png)
+![Capture](https://github.com/iammalikmusaib/INSURANCE-COST-PREDICTION-/blob/0893a542da776eb44b3ed30d44eb19456becbf9c/static/INSURANCE%20PHOTO.png)
