@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Premium Prediction</title>
+<!--	<link rel="stylesheet" href="{{url_for('static' , filename ='CSS/style.css')}}">-->
+
+
+	<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+
+</head>
+<body>
+<form action="{{url_for('predict')}}" method="post">
+
+	<table class="containers" >
+
+		<tr>
+			<td><center>
+				<h1>
+					<u>Insurance Premium Prediction</u>
+				
+				</h1>
+				</center>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				<center>
+					<label for="age" class="label">Age :</label>
+				</center>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<center>
+					<input type="text" class="text" name="age" id="age" placeholder="Enter Age">
+				</center><br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<center>
+					<label  class="label">Sex :</label>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td><center>
+				<b>Male</b> <input type="radio"  name="sex" value="1">
+				<b>Female</b> <input type="radio"  name="sex" value ="0">
+				</center><br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<center>
+					<label for="bmi" class="label">BMI :</label>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center>
+				<input type="text" class="text" name="bmi" id="bmi" placeholder="Enter BMI">
+			</center><br>
+				</td>
+		</tr>
+
+		<tr>
+			<td>
+				<center>
+					<label for="children" class="label">Children :</label>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center>
+					<input type="text" class="text" name="children" id="children" placeholder="Enter Children">
+			    </center><br>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				<center>
+					<label  class="label">Smoker :</label>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center>
+					<b>Yes</b> <input type="radio"  name="smoker" value ="1">
+					<b>No</b> <input type="radio"  name="smoker" value="0">
+				</center><br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<center>
+					<button type="submit" class="predictbtn">Predict</button>
+				</center><br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<center>
+					<div  class ="result">
+						<p>{{Predict_Text}}</p>
+					</div>
+				</center><br>
+			</td>
+		</tr>
+		<tr><td><h6>Created By: <b>MOHMMAD MUSAIB</b></h6></td></tr>
+	</table>
+	
+</form>
+
+</body>
+</html>
