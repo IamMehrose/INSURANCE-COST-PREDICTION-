@@ -1,5 +1,6 @@
 body {
-		  font-family: Arial, Helvetica, sans-serif;
+	font-family: "Lato", sans-serif;
+	text-align: center;
 		  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
@@ -19,9 +20,9 @@ body {
 	}
 
 h1{color: #ffffff;
-	text-shadow: 0 0 20px #3000a8,
-             0 0 30px #160fa8,
-             0 0 40px #231187;
+	margin: 1em auto;
+  text-shadow: 1px 1px black;
+	
 }
 
 * {
@@ -37,12 +38,21 @@ h1{color: #ffffff;
 
 			margin: 50px 25px 25px 450px;
 			padding: 5px 5px;
-			background-color: #758be4;
-			border-radius: 15px;
+			
 			justify-content: center;
             align-items: center;
             flex-direction: column;
 			text-align: justify;
+  			color: white;
+  			border: none;
+
+			/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
 .radio
@@ -54,7 +64,7 @@ h6
     {
        color:rgb(255, 255, 255);
 	   margin: 0px 0px 0px 0px;
-	   text-align: right;
+	   text-align: center;
 	   font-size:10x;
 	   text-shadow: 0 0 20px #3000a8,
              0 0 30px #160fa8,
@@ -70,20 +80,27 @@ hr
 
 .text
     {
-		width: 350px;
-	    height: 35px;
-		margin: 0px 2px 0px 0px;
-		box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-		border: 1.25px solid #231187;
-		background: #d4ddfd;
-		border-radius: 10px;
-		font-size:18px;
-		resize:none;
+		width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 10px auto;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
     }
+
+	.text::placeholder {
+		color: rgb(255, 255, 255, 0.5);
+  opacity: 1; /* Firefox */
+	}
+	
 
 .label
     {
-    	color: #000000;
+    	color: #ffffff;
 		text-align: left;
 		font-weight: bold;
 		font-size:18px;
@@ -91,40 +108,100 @@ hr
 
 /* Set a style for the submit button */
 .predictbtn
-    {
-	  background-color: #231187;
-	  color: white;
-	  padding: 5px 5px;
-	  margin: 0px 2px 0px 0px;
-	  border: none;
-	  cursor: pointer;
-	  width: 200px;
-	  height: 40px;
-	  opacity:0.9;
-	  border-radius: 37px;
-	  font-size:16px;
-	}
+{
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+text-shadow: 1px 1px 0px #211d21;
+color: #ffffff;
+font-size: 13px;
+background: rgba(255, 255, 255, 0.15);
+padding: 15px 70px;
+text-decoration: none;
+border: none;
+transition: 0.5s ease-in;
+margin: 20px;
+cursor: pointer;
+font-weight: bold;
+}
 
-/* Set for button */
-.predictbtn:hover
-    {
+.predictbtn:hover {
+background: rgba(250, 250, 250, 0.3);
+}
+
+@media screen and (max-width: 300px) {
+	span.psw {
+	  float: none;
+	}
+  }
+  
+  @keyframes fadeInDown {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, -100%, 0);
+	  transform: translate3d(0, -100%, 0);
+	}
+	100% {
 	  opacity: 1;
+	  -webkit-transform: none;
+	  transform: none;
 	}
-
+  }
 
 /* for result*/
 .result
     {
-	  background-color: #231187;
-	  text-align: center;
-	  font-size:20x;
-	  font-weight:bold;
-	  color:rgb(252, 249, 249);
-	  font-family: Arial, Helvetica, sans-serif;
-	  opacity: 0.80;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		text-shadow: 1px 1px 0px #211d21;
+		color: #ffffff;
+		font-size: 13px;
+		background: rgba(255, 255, 255, 0.15);
+		padding: 15px 70px;
+		text-decoration: none;
+		border: none;
+		transition: 0.5s ease-in;
+		margin: 20px;
+		cursor: pointer;
+		font-weight: bold;
+		
 	  width:550px;
 	  height: 30x;
 	  border-radius: 30px;
 	  padding: 0.5px 0.5px;
 	  margin: 10px 5px 5px 5px;
 	}
+
+	.radio-toolbar {
+		margin: 10px;
+	  }
+	  
+	  .radio-toolbar input[type="radio"] {
+		opacity: 0;
+		position: fixed;
+		width: 0;
+	  }
+	  
+	  .radio-toolbar label {
+		  display: inline-block;
+		  background: rgba(255, 255, 255, 0.15);
+		  padding: 10px 20px;
+		  font-family: sans-serif, Arial;
+		  font-size: 16px;
+		  
+		  border-radius: 4px;
+	  }
+	  
+	  .radio-toolbar label:hover {
+		background: rgba(255, 255, 255, 0.15);
+	  }
+	  
+	 
+	  
+	  .radio-toolbar input[type="radio"]:checked + label {
+		  background-color: rgb(240, 244, 240);
+		  color: #000000;
+		  
+	  }
+	  
