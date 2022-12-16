@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <title>Insurance Cost Prediction</title>
 <!--	<link rel="stylesheet" href="{{url_for('static' , filename ='CSS/style.css')}}">-->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
 
 </head>
 <body>
-<form action="{{url_for('predict')}}" method="post">
+<div class="row">
+		<div class="column">
+	<form action="{{url_for('predict')}}" method="post">
 
 	<table class="containers" >
 
 		<tr>
 			<td><center>
 				<h1>
-					<u>Insurance Cost Prediction</u>
+					Insurance Cost Prediction
 				
 				</h1>
 				</center>
@@ -27,82 +29,73 @@
 
 		<tr>
 			<td>
-				<center>
-					<label for="age" class="label">Age :</label>
-				</center>
+				<div class="row">
+					<div class="labelrow"><label for="age" class="label">Age :</label></div>
+						<div class="labelrow1"> <input type="text" class="text" name="age" id="age" placeholder="Enter Age" required>
+						</div>
+				</div>
 			</td>
 
 		</tr>
 		<tr>
 			<td>
-				<center>
-					<input type="text" class="text" name="age" id="age" placeholder="Enter Age">
-				</center><br>
+				
+					<div class="row">
+						<div class="labelrow"><label  class="label">Sex :</label></div>
+						<div class="labelrow1"> <div class="radio-toolbar">
+							<input type="radio" id="radioMale" name="sex" value="1" checked="checked">
+							<label for="radioMale">Male</label>
+							<input type="radio" id="radioFemale" name="sex" value ="0">
+							<label for="radioFemale">Female</label></div>
+					</div>
+					</div>
+				
 			</td>
 		</tr>
+		
 
 		<tr>
 			<td>
-				<center>
-					<label  class="label">Sex :</label>
-				</center>
+				
+					<div class="row">
+						<div class="labelrow"><label for="bmi" class="label">BMI :</label></div>
+						<div class="labelrow1"><input type="text" class="text" name="bmi" id="bmi" placeholder="Enter BMI" required>
+					</div>
+				</div>
+				
 			</td>
 		</tr>
-		<tr>
-			<td><center>
-				<b>Male</b> <input type="radio"  name="sex" value="1">
-				<b>Female</b> <input type="radio"  name="sex" value ="0">
-				</center><br>
-			</td>
-		</tr>
+		
 
 		<tr>
 			<td>
-				<center>
-					<label for="bmi" class="label">BMI :</label>
-				</center>
+				
+					<div class="row">
+						<div class="labelrow">	<label for="children" class="label">Children :</label></div>
+						<div class="labelrow1"><input type="text" class="text" name="children" id="children" placeholder="Enter Children" required>
+						</div>
+					</div>	
+				
 			</td>
 		</tr>
+	
 		<tr>
 			<td>
-				<center>
-				<input type="text" class="text" name="bmi" id="bmi" placeholder="Enter BMI">
-			</center><br>
-				</td>
-		</tr>
-
-		<tr>
-			<td>
-				<center>
-					<label for="children" class="label">Children :</label>
-				</center>
+				
+					<div class="row">
+						<div class="labelrow">	<label  class="label">Smoker :</label></div>
+						<div class="labelrow1"> <div class="radio-toolbar">
+							<input type="radio" id="radioSmoker" name="smoker" value ="1">
+							<label for="radioSmoker">Yes</label>
+							<input type="radio" id="radioNoSmoker" name="smoker" value="0" checked="checked">
+							<label for="radioNoSmoker">No</label>
+						</center><br></div>
+					</div>
+				</div>
+				
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<center>
-					<input type="text" class="text" name="children" id="children" placeholder="Enter Children">
-			    </center><br>
-			</td>
-		</tr>
-
-
-		<tr>
-			<td>
-				<center>
-					<label  class="label">Smoker :</label>
-				</center>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<center>
-					<b>Yes</b> <input type="radio"  name="smoker" value ="1">
-					<b>No</b> <input type="radio"  name="smoker" value="0">
-				</center><br>
-			</td>
-		</tr>
-
+		
 		<tr>
 			<td>
 				<center>
@@ -111,19 +104,44 @@
 			</td>
 		</tr>
 
-		<tr>
-			<td>
-				<center>
-					<div  class ="result">
-						<p>{{Predict_Text}}</p>
-					</div>
-				</center><br>
-			</td>
-		</tr>
-		<tr><td><h6>Created By: <b>Mohmmad Musaib</b></h6></td></tr>
 	</table>
 	
-</form>
+	</form>
+	</div>
 
+	<div class="column">
+<div class="column3"><img src="https://raw.githubusercontent.com/IamMehrose/NeuralSchema-/4d9b6695cbde386a59126a6e7bb59775f379d1db/family.png" alt="Insurance" width="150" height="150"></div>
+		<table class="containers1" >
+
+			<tr>
+				<td><center>
+						<h2>
+							Result
+			
+					</h2>
+			</center>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<center>
+						<div  class ="result">
+							<p>{{Predict_Text}}</p>
+						</div>
+					</center><br>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+<br>
+<div class="column1">
+<table class="containers2" >
+
+	<tr><td><h6>Created By: <b>Mohmmad Musaib with ❤️</b></h6></td></tr>
+</table>
+</div>
 </body>
 </html>
